@@ -1,4 +1,5 @@
 
+local addon,ns = ...;
 local cvars = {
 	componentTextureLevel="1.000000",
 	graphicsEnvironmentDetail="1",
@@ -34,7 +35,7 @@ local cvars = {
 	worldBaseMip="2.000000",
 };
 
-local function ToggleGFX()
+local function SetLowGFX()
 	-- check if wow in fullscreen mode
 	if GetCVar("gxMaximize")=="1" then
 		for k,v in pairs(cvars)do
@@ -46,7 +47,7 @@ local function ToggleGFX()
 	end
 end
 
-function SlashCmdList.SLASH_LOWGFX(cmdStr)
+function SlashCmdList.LOWGFX(cmdStr)
 	--local cmd,args = strsplit(" ",cmdStr,2);
 	--cmd = cmd:lower();
 	--if cmd == "" then
